@@ -5,6 +5,7 @@ import propiedades.PecesDatos;
 
 /**
  * Clase padre de los peces.
+ * 
  */
 public abstract class Pez {
     protected int edad=0;
@@ -16,6 +17,7 @@ public abstract class Pez {
     public Pez(PecesDatos datos,Boolean sexo) {
         this.sexo = sexo;
         this.datos = datos;
+
     }
 
 
@@ -42,31 +44,15 @@ public abstract class Pez {
                 }
             }
             edad++;
-
         }
 
     }
 
-    public int getEdadAdulta() {
-        return edadAdulta;
-    }
     public Boolean getVivo() {
         return vivo;
     }
     public void setVivo(Boolean vivo) {
         this.vivo = vivo;
-    }
-    public PezAguaTipo getTipo() {
-        return tipo;
-    }
-    public void setTipo(PezAguaTipo tipo) {
-        this.tipo = tipo;
-    }
-    public String getNombreComun() {
-        return nombreComun;
-    }
-    public String getNombreCientifico() {
-        return nombreCientifico;
     }
     public int getEdad() {
         return edad;
@@ -74,18 +60,8 @@ public abstract class Pez {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    public Sexo getSexo() {
+    public Boolean getSexo() {
         return sexo;
     }
-    public Boolean getFertil() {
-        return fertil;
-    }
-    public void setFertil(Boolean fertil) {
-        this.fertil = fertil;
-    }
-    @Override
-    public String toString() {
-        return "Pez [tipo=" + tipo + ", nombreComun=" + nombreComun + ", nombreCientifico=" + nombreCientifico
-                + ", edad=" + edad + ", sexo=" + sexo + ", fertil=" + fertil + ", vivo=" + vivo + "]";
-    }
+
 }
