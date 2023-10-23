@@ -23,6 +23,4 @@ public class AlmacenCentral {
     public void sustraerComida(int comida) {
         this.comida = comida;
     }
-
-
 }

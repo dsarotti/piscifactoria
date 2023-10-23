@@ -4,18 +4,19 @@ import java.util.Scanner;
 
 /**
  * Simulación de una piscifactoría
- * @param dias el número de días que han pasado
+ * @param dia el número de días que han pasado
  * @param piscifactorias las piscifactorias que hay
  * @param empresa nombre de la empresa
  * @param monedas el numero de créditos actuales
  */
 class Simulador {
     //TODO: Implementar main, menú y la lógica general
-    int dias =0;
+    private int dia = 0;
     //TODO: cambiar tipo de ArrayList de Object a Piscifactoria cuando esté creada.
-    ArrayList<Object> piscifactorias;
-    String empresa;
-    int monedas;
+    private ArrayList<Object> piscifactorias;
+    private String empresa;
+    //TODO: convertir en clase Monedero con sus métodos.
+    private int monedas;
 
 
     public void init(){

@@ -1,6 +1,5 @@
 package peces;
 import java.util.Random;
-import propiedades.AlmacenPropiedades;
 import propiedades.PecesDatos;
 
 /**
@@ -17,9 +16,7 @@ public abstract class Pez {
     public Pez(PecesDatos datos,Boolean sexo) {
         this.sexo = sexo;
         this.datos = datos;
-
     }
-
 
     public void showStatus(){
        System.out.println( "--------------- Nombre ---------------" );
@@ -35,7 +32,6 @@ public abstract class Pez {
         if (vivo){
             // TODO: alimentarse
             // alimentado == Piscifactoria.alimentar(cantidad)
-
             if(!alimentado){
                 Random r = new Random();
                 if (r.nextBoolean()){
@@ -44,22 +40,26 @@ public abstract class Pez {
                 }
             }
             edad++;
+            //TODO: verificar madurez, fertilidad y muerte de viejo.
         }
-
     }
 
-    public Boolean getVivo() {
+    public Boolean isVivo() {
         return vivo;
     }
+    
     public void setVivo(Boolean vivo) {
         this.vivo = vivo;
     }
+    
     public int getEdad() {
         return edad;
     }
+    
     public void setEdad(int edad) {
         this.edad = edad;
     }
+    
     public Boolean getSexo() {
         return sexo;
     }
