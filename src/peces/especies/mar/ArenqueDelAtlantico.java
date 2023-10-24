@@ -2,13 +2,12 @@ package peces.especies.mar;
 
 import peces.especies.Mar;
 import peces.tipos.Filtrador;
-import propiedades.PecesDatos;
+import propiedades.AlmacenPropiedades;
 
 public class ArenqueDelAtlantico extends Filtrador implements Mar {
 
-    public ArenqueDelAtlantico(PecesDatos datos, Boolean sexo) {
-        super(datos, sexo);
-        //TODO Auto-generated constructor stub
+    public ArenqueDelAtlantico(Boolean sexo) {
+        super(AlmacenPropiedades.ARENQUE_ATLANTICO, sexo);
     }
     
 }
