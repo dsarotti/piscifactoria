@@ -3,6 +3,10 @@ package monedas;
 public class Monedero {
     int monedas;
 
+    public Monedero(int monedas) {
+        this.monedas = monedas;
+    }
+
     public boolean extraer(int cantidad){
         if (cantidad>monedas){
             return false;

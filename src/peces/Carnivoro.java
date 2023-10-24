@@ -1,6 +1,7 @@
 package peces;
 
 import propiedades.PecesDatos;
+import tanque.Tanque;
 
 public abstract class Carnivoro extends Pez{
 
@@ -9,6 +10,7 @@ public abstract class Carnivoro extends Pez{
         super(datos, sexo);
     }
 
-    public void comer(){
+    public void comer(Tanque<Carnivoro> tanque){
+        
     }
 }

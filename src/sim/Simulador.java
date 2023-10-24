@@ -1,6 +1,7 @@
-package logica;
+package sim;
 import java.util.ArrayList;
 import java.util.Scanner;
+import monedas.Monedero;
 
 /**
  * Simulación de una piscifactoría
@@ -11,12 +12,13 @@ import java.util.Scanner;
  */
 class Simulador {
     //TODO: Implementar main, menú y la lógica general
+
     private int dia = 0;
     //TODO: cambiar tipo de ArrayList de Object a Piscifactoria cuando esté creada.
     private ArrayList<Object> piscifactorias;
     private String empresa;
     //TODO: convertir en clase Monedero con sus métodos.
-    private int monedas;
+    private Monedero monedero;
 
 
     public void init(){
@@ -40,7 +42,7 @@ class Simulador {
         //this.piscifactorias.add(
         //  PiscifactoriaRio(nombrePiscifactoria,25)
         //);
-        this.monedas=100;
+        this.monedero= new Monedero(100);
     }
 
     public static void menu(){
