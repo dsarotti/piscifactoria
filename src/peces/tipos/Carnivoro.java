@@ -1,4 +1,4 @@
-package peces;
+package peces.tipos;
 
 import propiedades.PecesDatos;
 import tanque.Tanque;
@@ -10,7 +10,8 @@ public abstract class Carnivoro extends Pez{
         super(datos, sexo);
     }
 
-    public void comer(Tanque<Carnivoro> tanque){
-        
+    @Override
+    public void comer(Tanque<Pez> tanque){
+        //comer carnivoro
     }
 }

@@ -2,7 +2,7 @@ package tanque;
 
 import java.util.ArrayList;
 
-import peces.Pez;
+import peces.tipos.Pez;
 
 public class Tanque<T extends Pez> {
 

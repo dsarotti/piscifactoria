@@ -1,7 +1,10 @@
 package sim;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import almacen.AlmacenCentral;
 import monedas.Monedero;
+import piscifactoria.Piscifactoria;
 
 /**
  * Simulación de una piscifactoría
@@ -15,11 +18,11 @@ class Simulador {
 
     private int dia = 0;
     //TODO: cambiar tipo de ArrayList de Object a Piscifactoria cuando esté creada.
-    private ArrayList<Object> piscifactorias;
+    private ArrayList<Piscifactoria> piscifactorias;
+    private AlmacenCentral almacenCentral;
     private String empresa;
     //TODO: convertir en clase Monedero con sus métodos.
     private Monedero monedero;
-
 
     public void init(){
         Scanner sc = new Scanner(System.in);

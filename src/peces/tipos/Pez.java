@@ -1,6 +1,7 @@
-package peces;
+package peces.tipos;
 import java.util.Random;
 import propiedades.PecesDatos;
+import tanque.Tanque;
 
 /**
  * Clase padre de los peces.
@@ -64,4 +65,5 @@ public abstract class Pez {
         return sexo;
     }
 
+    public abstract void comer(Tanque<Pez> tanque);
 }
