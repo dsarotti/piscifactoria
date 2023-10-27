@@ -64,6 +64,9 @@ public abstract class Pez {
     public Boolean getSexo() {
         return sexo;
     }
+    public boolean isAlimentado(){
+        return alimentado;
+    }
 
     public abstract void comer(Tanque<Pez> tanque);
 }

@@ -7,7 +7,7 @@ import peces.tipos.Pez;
 public class Tanque<T extends Pez> {
 
     private int capacidad;
-    private ArrayList<T> peces = new ArrayList<>();
+    private ArrayList<Pez> peces = new ArrayList<>();
     
     public void showStatus(){
         System.out.println("=============== Tanque # ===============");
@@ -21,10 +21,35 @@ public class Tanque<T extends Pez> {
 
     //Muestra la información de todos los peces del tanque.
     public void showFishStatus(){
-
+        
     }
 
     public void showCapacity(){
 
+    }
+
+    public int getCantidadPeces(){
+        return peces.size();
+    }
+    public int getCapacidad(){
+        return capacidad;
+    }
+    public int getVivos(){
+        int cuenta =0;
+        for (Pez pez : peces) {
+           if(pez.isVivo()){
+            cuenta++;
+           }
+        }
+        return cuenta;
+    }
+    public int getAlimentados(){
+        int cuenta = 0;
+        for (Pez pez : peces) {
+            if (pez.isAlimentado()){
+                cuenta++;
+            }
+        }
+        return cuenta;
     }
 }
