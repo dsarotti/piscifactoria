@@ -1,4 +1,4 @@
-package peces.tipos;
+package peces;
 import java.util.Random;
 import propiedades.PecesDatos;
 import tanque.Tanque;
@@ -9,6 +9,7 @@ import tanque.Tanque;
  */
 public abstract class Pez {
     protected int edad=0;
+    protected int ciclo;
     protected Boolean sexo;
     protected Boolean vivo=true;
     protected Boolean alimentado=true;
@@ -17,6 +18,7 @@ public abstract class Pez {
     public Pez(PecesDatos datos,Boolean sexo) {
         this.sexo = sexo;
         this.datos = datos;
+        this.ciclo = datos.getCiclo();
     }
 
     public void showStatus(){
@@ -26,7 +28,7 @@ public abstract class Pez {
        System.out.println( "Vivo: " + ( vivo?"Si":"No" ) );
        System.out.println( "Alimentado: " + ( alimentado?"Si":"No" ) );
        System.out.println( "Adulto: " + ( edad>=datos.getMadurez()?"Si":"No" ) );
-       System.out.println( "Fértil: " + ( (edad>=datos.getMadurez()&&alimentado)?"Si":"No" ) );
+       System.out.println( "Fértil: " + ( (isFertil())?"Si":"No" ) );
     }
 
     public void grow(){
@@ -66,6 +68,18 @@ public abstract class Pez {
     }
     public boolean isAlimentado(){
         return alimentado;
+    }
+    public PecesDatos getDatos(){
+        return datos;
+    }
+    public int getCiclo(){
+        return ciclo;
+    }
+    public boolean isFertil(){
+        return edad>=datos.getMadurez();
+    }
+    public boolean isAdulto(){
+        return edad>=datos.getMadurez();
     }
 
     public abstract void comer(Tanque<Pez> tanque);

@@ -2,7 +2,7 @@ package tanque;
 
 import java.util.ArrayList;
 
-import peces.tipos.Pez;
+import peces.Pez;
 
 public class Tanque<T extends Pez> {
 
@@ -11,11 +11,11 @@ public class Tanque<T extends Pez> {
     
     public void showStatus(){
         System.out.println("=============== Tanque # ===============");
-        System.out.println("Ocupación: peces / max (x%)");
-        System.out.println("Peces vivos: vivos / total (x%)");
-        System.out.println("Peces alimentados: alimentados / vivos (x%)");
-        System.out.println("Peces adultos: adultos / vivos (x%)");
-        System.out.println("Hembras / Machos: H/M");
+        System.out.println("Ocupación: " + peces.size() + " / " + capacidad + " (" + peces.size() * capacidad / 100 + "%)");
+        System.out.println("Peces vivos: " + getVivos() + " / " + peces.size() + " (" + peces.size() * getVivos() / 100 + "%)");
+        System.out.println("Peces alimentados: " + getAlimentados() + " / " + getVivos() + " (" + getAlimentados() * getVivos() / 100 +"%)");
+        System.out.println("Peces adultos: " + getAdultos() +" / " + getVivos() + " (" + getAdultos() * getVivos() / 100 +"%)");
+        System.out.println(getHembras() + " / Machos: H/M");
         System.out.println("Fértiles: fértiles / vivos");
     }
 
@@ -37,19 +37,37 @@ public class Tanque<T extends Pez> {
     public int getVivos(){
         int cuenta =0;
         for (Pez pez : peces) {
-           if(pez.isVivo()){
-            cuenta++;
-           }
+           if(pez.isVivo()) cuenta++;
         }
         return cuenta;
     }
     public int getAlimentados(){
         int cuenta = 0;
         for (Pez pez : peces) {
-            if (pez.isAlimentado()){
-                cuenta++;
-            }
+            if (pez.isAlimentado()) cuenta++;
         }
         return cuenta;
     }
+    public int getAdultos(){
+        int cuenta = 0;
+        for (Pez pez : peces) {
+            if (pez.getEdad()>=pez.getDatos().getMadurez()) cuenta++;
+        }
+        return cuenta;
+    }
+    public int getHembras(){
+        int cuenta=0;
+        for (Pez pez : peces) {
+            if (!pez.getSexo())cuenta++;
+        }
+        return cuenta;
+    }
+    public int getMachos(){
+        int cuenta=0;
+        for (Pez pez : peces) {
+            if (pez.getSexo())cuenta++;
+        }
+        return cuenta;
+    }
+
 }

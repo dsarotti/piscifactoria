@@ -1,5 +1,6 @@
 package peces.tipos;
 
+import peces.Pez;
 import propiedades.PecesDatos;
 import tanque.Tanque;
 

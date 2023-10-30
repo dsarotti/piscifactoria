@@ -2,7 +2,7 @@ package piscifactoria;
 import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 
-import peces.tipos.Pez;
+import peces.Pez;
 import tanque.Tanque;
 
 public abstract class Piscifactoria {
