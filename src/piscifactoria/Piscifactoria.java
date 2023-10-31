@@ -6,13 +6,13 @@ import tanque.Tanque;
 
 public abstract class Piscifactoria {
     private String nombre;
-    ArrayList<Tanque<? extends Pez>> tanques;
+    ArrayList<Tanque<? extends Pez>> tanques = new ArrayList<>();
     
     public void showStatus(){
         System.out.println("=============== nombre ===============");
         System.out.println("Tanques: " + tanques.size());
-        System.out.println("Ocupación:  "+ getCuentaPeces() + " / "+getCapacidad() + " (" + getOcupacion()+ "%)");
-        System.out.println("Peces vivos: "+ getVivos() + " / " + getCuentaPeces() + " (" + getPorcentajeVivos() + "%)");
+        System.out.println("Ocupación:  " + getCuentaPeces() + " / "+getCapacidad() + " (" + getOcupacion()+ "%)");
+        System.out.println("Peces vivos: " + getVivos() + " / " + getCuentaPeces() + " (" + getPorcentajeVivos() + "%)");
         System.out.println("Peces alimentados: " + getAlimentados() + " / " + getVivos() + " (" + getPorcentajeAlimentados() + "%)");
         System.out.println("Peces adultos: " + getAdultos() + " / vivos (x%)");
         System.out.println("Hembras / Machos: H/M");
