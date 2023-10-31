@@ -50,19 +50,15 @@ public abstract class Pez {
     public Boolean isVivo() {
         return vivo;
     }
-    
     public void setVivo(Boolean vivo) {
         this.vivo = vivo;
     }
-    
     public int getEdad() {
         return edad;
     }
-    
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
     public Boolean getSexo() {
         return sexo;
     }
@@ -81,6 +77,6 @@ public abstract class Pez {
     public boolean isAdulto(){
         return edad>=datos.getMadurez();
     }
-
+    
     public abstract void comer(Tanque<Pez> tanque);
 }

@@ -15,7 +15,7 @@ public class Tanque<T extends Pez> {
         System.out.println("Peces vivos: " + getVivos() + " / " + peces.size() + " (" + peces.size() * getVivos() / 100 + "%)");
         System.out.println("Peces alimentados: " + getAlimentados() + " / " + getVivos() + " (" + getAlimentados() * getVivos() / 100 +"%)");
         System.out.println("Peces adultos: " + getAdultos() +" / " + getVivos() + " (" + getAdultos() * getVivos() / 100 +"%)");
-        System.out.println(getHembras() + " / Machos: H/M");
+        System.out.println("Hembras / Machos: " + getHembras() + "/" + getMachos());
         System.out.println("Fértiles: fértiles / vivos");
     }
 
@@ -66,6 +66,14 @@ public class Tanque<T extends Pez> {
         int cuenta=0;
         for (Pez pez : peces) {
             if (pez.getSexo())cuenta++;
+        }
+        return cuenta;
+    }
+
+    public int getFertiles(){
+        int cuenta = 0;
+        for (Pez pez : peces) {
+            if (pez.getCiclo()==0) cuenta++;
         }
         return cuenta;
     }

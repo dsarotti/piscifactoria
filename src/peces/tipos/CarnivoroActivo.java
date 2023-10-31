@@ -16,7 +16,6 @@ public abstract class CarnivoroActivo extends Carnivoro {
         //TODO Auto-generated constructor stub
     }
 
-
     //TODO: prob. eliminar pez muerto: 50%
     public void comer(Tanque<Pez> tanque) {
         Random r = new Random();
@@ -26,6 +25,4 @@ public abstract class CarnivoroActivo extends Carnivoro {
             //comer 1 vez
         }
     }
-
-
 }
