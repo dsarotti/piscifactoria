@@ -1,11 +1,11 @@
 package piscifactoria;
-import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 
 import peces.Pez;
 import tanque.Tanque;
 
 public abstract class Piscifactoria {
+    private String nombre;
     ArrayList<Tanque<? extends Pez>> tanques;
     
     public void showStatus(){
@@ -20,6 +20,9 @@ public abstract class Piscifactoria {
         System.out.println("Almacén de comida: actual / max (x%)");
     } 
 
+    public String getNombre(){
+        return nombre;
+    }
     public int getCuentaPeces(){
         int cuenta=0;
         for (Tanque<? extends Pez> tanque : tanques) {
@@ -62,5 +65,8 @@ public abstract class Piscifactoria {
         int alimentados = getAlimentados();
         int vivos = getVivos();
         return alimentados * vivos / 100;
+    }
+    public int getIndiceTanque(Tanque<? extends Pez> tanque){
+        return tanques.indexOf(tanque);
     }
 }

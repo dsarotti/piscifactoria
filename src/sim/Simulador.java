@@ -17,7 +17,6 @@ class Simulador {
     //TODO: Implementar main, menú y la lógica general
 
     private int dia = 0;
-    //TODO: cambiar tipo de ArrayList de Object a Piscifactoria cuando esté creada.
     private ArrayList<Piscifactoria> piscifactorias;
     private AlmacenCentral almacenCentral;
     private String empresa;
