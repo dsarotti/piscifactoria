@@ -14,7 +14,13 @@ import piscifactoria.Piscifactoria;
  * @param monedas el numero de créditos actuales
  */
 class Simulador {
+    private static Simulador sim;
     //TODO: Implementar main, menú y la lógica general
+
+    public static void main(String[] args) {
+        sim=new Simulador();
+        sim.init();
+    }
 
     private int dia = 0;
     private ArrayList<Piscifactoria> piscifactorias;
@@ -22,6 +28,7 @@ class Simulador {
     private String empresa;
     //TODO: convertir en clase Monedero con sus métodos.
     private Monedero monedero;
+
 
     public void init(){
         Scanner sc = new Scanner(System.in);
@@ -36,7 +43,7 @@ class Simulador {
             System.out.println("Introduzca el nombre de la empresa: ");
             nombreEmpresa=sc.nextLine();
         }
-        while(nombreEmpresa.isBlank()){
+        while(primeraPiscifactoria.isBlank()){
             System.out.println("Introduzca el nombre de la primera piscifactoría: ");
             primeraPiscifactoria=sc.nextLine();    
         }
@@ -45,6 +52,7 @@ class Simulador {
         //  PiscifactoriaRio(nombrePiscifactoria,25)
         //);
         this.monedero= new Monedero(100);
+        menu();
     }
 
     public static void menu(){

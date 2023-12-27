@@ -7,7 +7,7 @@ public class Monedero {
         this.monedas = monedas;
     }
 
-    public boolean extraer(int cantidad){
+    public boolean retirar(int cantidad){
         if (cantidad>monedas){
             return false;
         }else{
