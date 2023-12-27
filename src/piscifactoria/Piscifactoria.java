@@ -1,36 +1,47 @@
 package piscifactoria;
-import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 
 import peces.Pez;
 import tanque.Tanque;
 
 public abstract class Piscifactoria {
-    ArrayList<Tanque<? extends Pez>> tanques;
+    private String nombre;
+    ArrayList<Tanque<? extends Pez>> tanques = new ArrayList<>();
     
     public void showStatus(){
         System.out.println("=============== nombre ===============");
         System.out.println("Tanques: " + tanques.size());
-        System.out.println("Ocupación:  "+ getCuentaPeces() + " / "+getCapacidad() + " (" + getOcupacion()+ "%)");
-        System.out.println("Peces vivos: "+ getVivos() + " / " + getCuentaPeces() + " (" + getPorcentajeVivos() + "%)");
+        System.out.println("Ocupación:  " + getCuentaPeces() + " / "+getCapacidad() + " (" + getOcupacion()+ "%)");
+        System.out.println("Peces vivos: " + getVivos() + " / " + getCuentaPeces() + " (" + getPorcentajeVivos() + "%)");
         System.out.println("Peces alimentados: " + getAlimentados() + " / " + getVivos() + " (" + getPorcentajeAlimentados() + "%)");
-        System.out.println("Peces adultos: adultos / vivos (x%)");
+        System.out.println("Peces adultos: " + getAdultos() + " / vivos (x%)");
         System.out.println("Hembras / Machos: H/M");
         System.out.println("Fértiles: fértiles / vivos");
         System.out.println("Almacén de comida: actual / max (x%)");
     } 
 
+    private int getAdultos() {
+        int cuenta = 0;
+        for (Tanque<? extends Pez> tanque : tanques) {
+            cuenta =+ tanque.getAdultos();
+        }
+        return cuenta;
+    }
+
+    public String getNombre(){
+        return nombre;
+    }
     public int getCuentaPeces(){
         int cuenta=0;
         for (Tanque<? extends Pez> tanque : tanques) {
-            cuenta= cuenta + tanque.getCantidadPeces();
+            cuenta =+ tanque.getCantidadPeces();
         }
         return cuenta;
     }
     public int getCapacidad(){
         int cuenta = 0;
         for (Tanque<? extends Pez> tanque : tanques) {
-            cuenta = cuenta+tanque.getCapacidad();
+            cuenta =+tanque.getCapacidad();
         }
         return cuenta;
     }
@@ -62,5 +73,8 @@ public abstract class Piscifactoria {
         int alimentados = getAlimentados();
         int vivos = getVivos();
         return alimentados * vivos / 100;
+    }
+    public int getIndiceTanque(Tanque<? extends Pez> tanque){
+        return tanques.indexOf(tanque);
     }
 }
