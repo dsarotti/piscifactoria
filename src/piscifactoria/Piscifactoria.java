@@ -2,12 +2,18 @@ package piscifactoria;
 import java.util.ArrayList;
 
 import peces.Pez;
+import peces.especies.rio.CarpaPlateada;
 import tanque.Tanque;
 
 public abstract class Piscifactoria {
     private String nombre;
+    
     ArrayList<Tanque<? extends Pez>> tanques = new ArrayList<>();
     
+    public Piscifactoria(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void showStatus(){
         System.out.println("=============== nombre ===============");
         System.out.println("Tanques: " + tanques.size());
@@ -25,6 +31,7 @@ public abstract class Piscifactoria {
         for (Tanque<? extends Pez> tanque : tanques) {
             cuenta =+ tanque.getAdultos();
         }
+        tanques.add(new Tanque<CarpaPlateada>(cuenta, null));
         return cuenta;
     }
 

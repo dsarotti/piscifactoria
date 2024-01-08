@@ -1,3 +1,5 @@
 package peces.especies;
 
-public interface Rio {}
+public interface Rio {
+
+}

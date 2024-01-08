@@ -22,3 +22,26 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+bin/almacen/AlmacenCentral.class
+bin/monedas/Monedero.class
+bin/peces/Pez.class
+bin/peces/especies/Mar.class
+bin/peces/especies/Rio.class
+bin/peces/especies/doble/LubinaEuropea.class
+bin/peces/especies/doble/TruchaArcoiris.class
+bin/peces/especies/mar/ArenqueDelAtlantico.class
+bin/peces/especies/mar/Besugo.class
+bin/peces/especies/mar/LenguadoEuropeo.class
+bin/peces/especies/mar/LubinaRayada.class
+bin/peces/especies/mar/Robalo.class
+bin/peces/especies/rio/CarpaPlateada.class
+bin/peces/especies/rio/Pejerrey.class
+bin/peces/especies/rio/PercaEuropea.class
+bin/peces/especies/rio/SalmonChinook.class
+bin/peces/especies/rio/TilapiaDelNilo.class
+bin/peces/tipos/Carnivoro.class
+bin/peces/tipos/CarnivoroActivo.class
+bin/peces/tipos/Filtrador.class
+bin/piscifactoria/Piscifactoria.class
+bin/sim/Simulador.class
+bin/tanque/Tanque.class

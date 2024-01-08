@@ -1,70 +1,78 @@
 package sim;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import almacen.AlmacenCentral;
 import monedas.Monedero;
+import peces.Pez;
 import piscifactoria.Piscifactoria;
+import piscifactoria.PiscifactoriaRio;
 
 /**
  * Simulación de una piscifactoría
- * @param dia el número de días que han pasado
+ * 
+ * @param dia            el número de días que han pasado
  * @param piscifactorias las piscifactorias que hay
- * @param empresa nombre de la empresa
- * @param monedas el numero de créditos actuales
+ * @param empresa        nombre de la empresa
+ * @param monedas        el numero de créditos actuales
  */
 class Simulador {
+
     private static Simulador sim;
-    //TODO: Implementar main, menú y la lógica general
+    // TODO: Implementar main, menú y la lógica general
 
     public static void main(String[] args) {
-        sim=new Simulador();
+        sim = new Simulador();
         sim.init();
     }
 
+    private static Scanner sc;
     private int dia = 0;
     private ArrayList<Piscifactoria> piscifactorias;
     private AlmacenCentral almacenCentral;
     private String empresa;
-    //TODO: convertir en clase Monedero con sus métodos.
+    // TODO: convertir en clase Monedero con sus métodos.
     private Monedero monedero;
 
+    public void init() {
+        sc = new Scanner(System.in);
 
-    public void init(){
-        Scanner sc = new Scanner(System.in);
+        // TODO: crear todos los objetos necesarios
 
-        //TODO: crear todos los objetos necesarios
+        String nombreEmpresa = "";
+        String primeraPiscifactoria = "";
+        piscifactorias=new ArrayList<Piscifactoria>();
 
-        String nombreEmpresa ="";
-        String primeraPiscifactoria="";
-
-        //Solicita nombre de empresa y piscifactoría, no deben ser strings vacíos.
-        while(nombreEmpresa.isBlank()){
+        // Solicita nombre de empresa y piscifactoría, no deben ser strings vacíos.
+        while (nombreEmpresa.isBlank()) {
             System.out.println("Introduzca el nombre de la empresa: ");
-            nombreEmpresa=sc.nextLine();
+            nombreEmpresa = sc.nextLine();
         }
-        while(primeraPiscifactoria.isBlank()){
+
+        while (primeraPiscifactoria.isBlank()) {
             System.out.println("Introduzca el nombre de la primera piscifactoría: ");
-            primeraPiscifactoria=sc.nextLine();    
+            primeraPiscifactoria = sc.nextLine();
         }
-        this.empresa=nombreEmpresa;
-        //this.piscifactorias.add(
-        //  PiscifactoriaRio(nombrePiscifactoria,25)
-        //);
-        this.monedero= new Monedero(100);
-        menu();
+
+        empresa = nombreEmpresa;
+
+        piscifactorias.add(new PiscifactoriaRio(primeraPiscifactoria));
+
+        monedero = new Monedero(100);
+
+        piscifactorias.get(0).showStatus();
     }
 
-    public static void menu(){
-        //TODO: llevar el switch a otro método.
-        Scanner scanner = new Scanner(System.in);
+    public static void menu() {
+        // TODO: llevar el switch a otro método.
         int opcion;
 
         do {
             mostrarMenu();
             System.out.print("Ingrese su opción: ");
-            opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpia el buffer del teclado
+            opcion = sc.nextInt();
+            sc.nextLine(); // Limpia el buffer del teclado
             switch (opcion) {
                 case 1:
                     System.out.println("Seleccionó Estado general");
@@ -113,7 +121,7 @@ class Simulador {
                     break;
             }
         } while (opcion != 14);
-        scanner.close();
+        sc.close();
     }
 
     /**
@@ -138,43 +146,43 @@ class Simulador {
         System.out.println();
     }
 
-    public void menuPisc(){
+    public void menuPisc() {
         Scanner sc = new Scanner(System.in);
         int opcion;
         System.out.println("Seleccione una opción:");
         System.out.println("--------------------------- Piscifactorías ---------------------------");
         System.out.println("[Peces vivos / Peces totales / Espacio total]");
 
-        //TODO: cambiar por los valores reales. 
-        //TODO: Cambiar Object por la clase implementada. 
-        //TODO: x = index + 1.
+        // TODO: cambiar por los valores reales.
+        // TODO: Cambiar Object por la clase implementada.
+        // TODO: x = index + 1.
         for (Object piscifactoria : this.piscifactorias) {
             System.out.println("x.- Nombre [vivos/total/espacio]");
         }
         System.out.println("- 0: Cancelar");
 
-        do{
+        do {
             opcion = sc.nextInt();
-        }
-        while (opcion>14 || opcion<0);
+        } while (opcion > 14 || opcion < 0);
     }
 
-    // Muestra el menú de piscifactorías y permite seleccionar una de ellas, devolviendo
+    // Muestra el menú de piscifactorías y permite seleccionar una de ellas,
+    // devolviendo
     // la opción seleccionada.
-    //TODO: devolver una piscifactoria en lugar de Object
-    public Object selectPisc(){
+    // TODO: devolver una piscifactoria en lugar de Object
+    public Object selectPisc() {
         Scanner scanner = new Scanner(System.in);
         int opcion;
         do {
             menuPisc();
-            opcion=scanner.nextInt();
-        }while (opcion < 0 || opcion>this.piscifactorias.size());
+            opcion = scanner.nextInt();
+        } while (opcion < 0 || opcion > this.piscifactorias.size());
         scanner.close();
-        
-        if (opcion==0){
+
+        if (opcion == 0) {
             return null;
-        }else{
-            return piscifactorias.get(opcion-1);
+        } else {
+            return piscifactorias.get(opcion - 1);
         }
     }
 }
