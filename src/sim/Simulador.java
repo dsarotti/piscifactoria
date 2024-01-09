@@ -17,15 +17,9 @@ import piscifactoria.PiscifactoriaRio;
  * @param empresa        nombre de la empresa
  * @param monedas        el numero de créditos actuales
  */
-class Simulador {
-
+public class Simulador {
     private static Simulador sim;
     // TODO: Implementar main, menú y la lógica general
-
-    public static void main(String[] args) {
-        sim = new Simulador();
-        sim.init();
-    }
 
     private static Scanner sc;
     private int dia = 0;
