@@ -28,7 +28,7 @@ public abstract class Pez {
        System.out.println( "Vivo: " + ( vivo?"Si":"No" ) );
        System.out.println( "Alimentado: " + ( alimentado?"Si":"No" ) );
        System.out.println( "Adulto: " + ( edad>=datos.getMadurez()?"Si":"No" ) );
-       System.out.println( "Fértil: " + ( (isFertil())?"Si":"No" ) );
+       System.out.println( "Fértil: " + ( (esFertil())?"Si":"No" ) );
     }
 
     public void grow(){
@@ -71,10 +71,10 @@ public abstract class Pez {
     public int getCiclo(){
         return ciclo;
     }
-    public boolean isFertil(){
+    public boolean esFertil(){
         return edad>=datos.getMadurez();
     }
-    public boolean isAdulto(){
+    public boolean esAdulto(){
         return edad>=datos.getMadurez();
     }
     
